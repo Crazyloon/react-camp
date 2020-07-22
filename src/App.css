@@ -176,7 +176,7 @@ body{
   opacity: 0;
   animation-name: simple-fade;
   animation-duration: 1000ms;
-  animation-delay: calc(var(--animation-order) * 120ms);
+  animation-delay: calc(500ms + var(--animation-order) * 120ms);
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
