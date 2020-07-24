@@ -83,7 +83,7 @@ export const Game = () => {
 
   return (
     <div className="game">
-      <h2 className="status"><GameStatus winner={winner} marker={marker} /></h2>
+      <GameStatus winner={winner} marker={marker} />
       <div className="game-board">
         <Board
           placeMarker={placeMarker}

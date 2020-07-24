@@ -11,6 +11,6 @@ export const GameStatus = ({winner, marker}) => {
   }
 
   return (
-    <div className="status">{status}</div>
+    <h2 className="status">{status}</h2>
   )
 }
