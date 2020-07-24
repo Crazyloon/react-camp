@@ -2,7 +2,7 @@ import React from "react";
 import { Square } from "./Square";
 
 
-export const Board = ({status, gameBoard, placeMarker, player}) => {  
+export const Board = ({gameBoard, placeMarker, player}) => {  
   
   const renderSquare = (i) => {
     return <Square position={i} value={gameBoard[i]} onClick={() => placeMarker(i)} player={player} />
@@ -10,7 +10,6 @@ export const Board = ({status, gameBoard, placeMarker, player}) => {
 
   return (
     <>
-      <h2 className="status">{status}</h2>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Board } from "./Board";
 import { GameHistory } from "./GameHistory";
+import { GameStatus } from "./GameStatus";
 
 export const Game = () => {
   // const [gameBoard, setGameBoard] = useState(Array(9).fill(null));
@@ -13,7 +14,6 @@ export const Game = () => {
 
   const current = history[stepNumber];
   const marker = player === true ? "X" : "O";
-  let status;
 
   function jumpTo(step) {
     setStepNumber(step);
@@ -81,19 +81,11 @@ export const Game = () => {
 
   const winner = calculateWinner(current.squares);
 
-  if (winner) {
-    status = `${winner} is the winner! 🥳`;
-  } else if (winner === null) {
-    status = `Player ${marker}, make your move.`;
-  } else {
-    status = `Cat's Game! No winner this time!`
-  }
-
   return (
     <div className="game">
+      <h2 className="status"><GameStatus winner={winner} marker={marker} /></h2>
       <div className="game-board">
         <Board
-          status={status}
           placeMarker={placeMarker}
           gameBoard={current.squares}
           player={marker}
@@ -102,8 +94,8 @@ export const Game = () => {
       {winner !== null 
         ? <button onClick={() => {resetGameBoard()}} className="btn btn-accent-outline reset-button mt-2">Play Again</button> 
         : null}
-      <div className="game-info mt-2">
-        <GameHistory history={history} jumpTo={jumpTo}/>
+      <div className="game-history mt-2">
+        { history.length > 1 ? <GameHistory history={history} jumpTo={jumpTo}/> : null}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const GameHistory = ({history, jumpTo}) => {
             : `Restart the game`;
             return (
               <li className="history-item" key={move}>
-                <button className="history-button" onClick={() => jumpTo(move)}>{desc}</button>
+                <button className="btn btn-accent btn-sm" onClick={() => jumpTo(move)}>{desc}</button>
               </li>
             )
         })}

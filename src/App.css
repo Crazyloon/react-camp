@@ -52,6 +52,18 @@ body {
   color: white;
   font-size: 1.2em;
 }
+.btn.btn-sm {
+  padding: 4px 16px;
+  border-radius: 3px;
+  min-width: 140px;
+  height: 24px;
+  font-size: 0.8em;
+}
+
+.btn.btn-lg {
+  height: 60px;
+  width: 100%;
+}
 
 .btn-primary {
   background-color: var(--primary);
@@ -64,6 +76,7 @@ body {
 }
 
 .btn-primary:focus {
+  background-color: var(--primary-hover);
   box-shadow: 0 0 0px 2px var(--primary-focus);
 }
 
@@ -82,6 +95,7 @@ body {
 }
 
 .btn-secondary:focus {
+  background-color: var(--secondary-hover);
   box-shadow: 0 0 0px 2px var(--secondary-focus);
 }
 
@@ -100,6 +114,7 @@ body {
 }
 
 .btn-accent:focus {
+  background-color: var(--accent-hover);
   box-shadow: 0 0 0px 2px var(--accent-focus);
 }
 
@@ -162,11 +177,6 @@ body {
 
 .btn-accent-outline:active {
   background-color: var(--accent-active);
-}
-
-.btn-lg {
-  height: 60px;
-  width: 100%;
 }
 
 /* Flex */
@@ -532,10 +542,16 @@ body {
   width: 45px;  
 }
 
-.square-X {
+.player-X, .player-O {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.square-X, .player-X {
   color: var(--secondary-focus);
 }
-.square-O {
+.square-O, .player-O {
   color: var(--primary-focus);
 }
 
@@ -592,6 +608,7 @@ body {
 .game {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .game-board {
@@ -600,40 +617,38 @@ body {
   align-items: center;
 }
 
-.game-info {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .history-heading {
   flex-basis: 100%;
   text-align: center;
 }
 
-.status {
-  font-family: consolas, monospace;
+.history-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .history-item {
   margin-bottom: 5px;
   list-style: none;
+  position: relative;
+  transform: translate(-100%);
+  opacity: 0.1;
+  animation-name: shift-in-left-to-right;
+  animation-duration: 0.5s;
+  
+  animation-fill-mode: forwards;
 }
 
-.history-button {
-  background-color: var(--accent);
-  padding: 4px 18px;
-  border: none;
-  cursor: pointer;
-  color: var(--primary-light);
-  border-radius: 3px;
-  min-width: 140px;
-}
-
-.history-button:hover {
-  background-color: var(--accent-hover);
-}
-.history-button:focus {
-  background-color: var(--accent-hover);
-  box-shadow: 0 0 0 2px  var(--accent-focus);
+@keyframes shift-in-left-to-right {
+  0%{
+    transform: translate(-100%);
+    opacity: 0.1;
+  }
+  
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
