@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-camp/static/css/main.4982fbda.chunk.css",
-    "main.js": "/react-camp/static/js/main.a9d982ca.chunk.js",
-    "main.js.map": "/react-camp/static/js/main.a9d982ca.chunk.js.map",
+    "main.css": "/react-camp/static/css/main.62b06322.chunk.css",
+    "main.js": "/react-camp/static/js/main.ffe1f299.chunk.js",
+    "main.js.map": "/react-camp/static/js/main.ffe1f299.chunk.js.map",
     "runtime-main.js": "/react-camp/static/js/runtime-main.9b4ef305.js",
     "runtime-main.js.map": "/react-camp/static/js/runtime-main.9b4ef305.js.map",
     "static/js/2.e33ccb51.chunk.js": "/react-camp/static/js/2.e33ccb51.chunk.js",
     "static/js/2.e33ccb51.chunk.js.map": "/react-camp/static/js/2.e33ccb51.chunk.js.map",
     "index.html": "/react-camp/index.html",
-    "precache-manifest.3142ccb49ec516a66e1e68d322d21c17.js": "/react-camp/precache-manifest.3142ccb49ec516a66e1e68d322d21c17.js",
+    "precache-manifest.88d95230f4690d9c2fec3433604a7daf.js": "/react-camp/precache-manifest.88d95230f4690d9c2fec3433604a7daf.js",
     "service-worker.js": "/react-camp/service-worker.js",
-    "static/css/main.4982fbda.chunk.css.map": "/react-camp/static/css/main.4982fbda.chunk.css.map",
+    "static/css/main.62b06322.chunk.css.map": "/react-camp/static/css/main.62b06322.chunk.css.map",
     "static/js/2.e33ccb51.chunk.js.LICENSE.txt": "/react-camp/static/js/2.e33ccb51.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9b4ef305.js",
     "static/js/2.e33ccb51.chunk.js",
-    "static/css/main.4982fbda.chunk.css",
-    "static/js/main.a9d982ca.chunk.js"
+    "static/css/main.62b06322.chunk.css",
+    "static/js/main.ffe1f299.chunk.js"
   ]
 }
