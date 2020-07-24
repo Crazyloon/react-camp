@@ -6,9 +6,16 @@
   --primary-hover: #2ebec5;
   --primary-focus: #88f9ff;
   --primary-active: #006469;
+  --primary-faded: rgba(0, 172, 181, 0.5);
   --secondary: #ff0048;
+  --secondary-hover: #ff185a;
+  --secondary-focus: #ff3c73;
+  --secondary-active: #c50038;
+  --secondary-faded: rgb(255, 0, 72, 0.5);
   --accent: #9265ae;
-  --accent-light: #9d00ff;
+  --accent-hover: #9f59ca;
+  --accent-focus: #7a20b2;
+  --accent-active: #5e1989;
   --primary-light: #eeeeee;
 }
 
@@ -46,22 +53,58 @@ body {
   font-size: 1.2em;
 }
 
-.btn:hover {
+.btn-primary {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
   cursor: pointer;
   background-color: var(--primary-hover);
 }
 
-.btn:focus {
+.btn-primary:focus {
   box-shadow: 0 0 0px 2px var(--primary-focus);
 }
 
-.btn:active {
+.btn-primary:active {
   background-color: var(--primary-active);
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
+.btn-secondary {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+  cursor: pointer;
+  background-color: var(--secondary-hover);
+}
+
+.btn-secondary:focus {
+  box-shadow: 0 0 0px 2px var(--secondary-focus);
+}
+
+.btn-secondary:active {
+  background-color: var(--secondary-active);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-accent:hover {
+  cursor: pointer;
+  background-color: var(--accent-hover);
+}
+
+.btn-accent:focus {
+  box-shadow: 0 0 0px 2px var(--accent-focus);
+}
+
+.btn-accent:active {
+  background-color: var(--accent-active);
 }
 
 .btn-primary-outline {
@@ -69,14 +112,74 @@ body {
   border: 1px solid var(--primary);
 }
 
+.btn-primary-outline:hover {
+  cursor: pointer;
+  background-color: var(--primary-hover);
+}
+
+.btn-primary-outline:focus {
+  background-color: var(--primary-hover);
+  box-shadow: 0 0 0px 2px var(--primary-focus);
+}
+
+.btn-primary-outline:active {
+  background-color: var(--primary-active);
+}
+
 .btn-secondary-outline {
   background-color: transparent;
-  border: 1px solid #42464b;
+  border: 1px solid var(--secondary);
+}
+
+.btn-secondary-outline:hover {
+  cursor: pointer;
+  background-color: var(--secondary-hover);
+}
+
+.btn-secondary-outline:focus {
+  background-color: var(--secondary-hover);
+  box-shadow: 0 0 0px 2px var(--secondary-focus);
+}
+
+.btn-secondary-outline:active {
+  background-color: var(--secondary-active);
+}
+
+.btn-accent-outline {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+}
+
+.btn-accent-outline:hover {
+  cursor: pointer;
+  background-color: var(--accent-hover);
+}
+
+.btn-accent-outline:focus {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 0px 2px var(--accent-focus);
+}
+
+.btn-accent-outline:active {
+  background-color: var(--accent-active);
 }
 
 .btn-lg {
   height: 60px;
   width: 100%;
+}
+
+/* Flex */
+.flex {
+  display: flex;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-align-center {
+  align-items: center;
 }
 
 /* Spacing */
@@ -176,13 +279,29 @@ body {
   bottom: 0;
   position: absolute;
   background-color: var(--accent);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .nav-item:hover:after {
   content: "";
   width: 160px;
   left: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.nav-item-current {
+  background-color: var(--primary-hover);
+}
+.nav-item-current:after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: var(--accent-focus);
+  transition: 0.5s;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -198,19 +317,6 @@ body {
 .nav-item:active {
   background-color: var(--primary-active);
   color: var(--primary-light);
-}
-
-.nav-item-current:after {
-  content: "";
-  height: 4px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  background-color: var(--accent-light);
-  transition: 0.5s;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
 
 .nav-btn {
@@ -401,3 +507,133 @@ body {
 }
 
 /* Lesson 2 */
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  border: none; /* clear normal borders */
+  background: var(--primary-dark);
+  float: left;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 45px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 45px;  
+}
+
+.square-X {
+  color: var(--secondary-focus);
+}
+.square-O {
+  color: var(--primary-focus);
+}
+
+.square.square-3, .square.square-4, .square.square-5,
+.square.square-6, .square.square-7, .square.square-8 {
+  border-top: 1px solid var(--primary-light);
+}
+.square.square-0, .square.square-1,
+.square.square-3, .square.square-4,
+.square.square-6, .square.square-7 {
+  border-right: 1px solid var(--primary-light);
+}
+.square.square-0, .square.square-1, .square.square-2,
+.square.square-3, .square.square-4, .square.square-5 {
+  border-bottom: 1px solid var(--primary-light);
+}
+.square.square-1, .square.square-2,
+.square.square-4, .square.square-5,
+.square.square-7, .square.square-8 {
+  border-left: 1px solid var(--primary-light);
+}
+
+.square:focus {
+  outline: none;
+  position: relative;
+  /* border-radius: 50%;
+  border: none; */
+}
+
+/* .square-X:focus {
+  box-shadow: inset 0 0 7px 1px var(--secondary-focus), 0 0 4px 2px var(--primary-dark);
+  background-color: var(--secondary-faded);
+}
+.square-O:focus {
+  box-shadow: inset 0 0 7px 1px var(--primary-focus), 0 0 4px 2px var(--primary-dark);
+  background-color: var(--primary-faded);
+} */
+
+/* .square.turn-X:focus:not(.square-X):not(.square-O) { */
+.square.turn-X:focus {
+  box-shadow: inset 0 0 7px 1px var(--secondary-focus), 0 0 4px 2px var(--primary-dark);
+  background-color: var(--secondary-faded);
+}
+/* .square.turn-O:focus :not(.square-X):not(.square-O) { */
+.square.turn-O:focus {
+  box-shadow: inset 0 0 7px 1px var(--primary-focus), 0 0 4px 2px var(--primary-dark);
+  background-color: var(--primary-faded);
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.history-heading {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.status {
+  font-family: consolas, monospace;
+}
+
+.history-item {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.history-button {
+  background-color: var(--accent);
+  padding: 4px 18px;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-light);
+  border-radius: 3px;
+  min-width: 140px;
+}
+
+.history-button:hover {
+  background-color: var(--accent-hover);
+}
+.history-button:focus {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 0 2px  var(--accent-focus);
+}
