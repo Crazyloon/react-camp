@@ -18,7 +18,17 @@
   --accent-active: #7521aa;
   --accent-after: #f2b1ff;
   --primary-light: #eeeeee;
+  --xs: 575px; /* Max container width None (auto) */
+  --sm: 576px; /* Max container width 540px */
+  --md: 768px; /* Max container width 720px */
+  --lg: 992px; /* Max container width 960px */
+  --xl: 1200px; /* Max container width 1140px */
 }
+
+/*  EXTRA SMALL STYLES 
+    Extra small devices (portrait phones, less than 576px) 
+    No media query since this is a "mobile first" design
+*/
 
 /* Base Styles */
 * {
@@ -36,6 +46,11 @@ body {
   background-color: var(--primary-dark);
   height: 100vh;
   font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
 }
 
 #root {
@@ -256,18 +271,93 @@ body {
 }
 
 /* Header Navigation */
-.navbar {
-  height: 60px;
+.nav-list {
+  overflow: hidden;
+  background-color: var(--secondary-dark);
+  list-style: none;
+}
+
+.nav-list li {
+  float: left;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-light);
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+.nav-list li:hover {
+  background-color: var(--accent-hover);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.nav-list li.active {
   background-color: var(--primary);
-  /* color: var(--primary-dark); */
+  color: var(--primary-light);
+}
+
+.nav-list .nav-toggle {
+  display: none;
+  background-color: var(--secondary-dark);
+}
+
+.nav-brand-name {
+  display: inline;
+
+}
+
+@media screen and (max-width: 576px) {
+  .nav-list li:not(:first-child) {
+    display: none;
+  }
+  .nav-list li.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .nav-list.responsive {
+    position: relative;
+    overflow: visible;
+  }
+  .nav-list.responsive .nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-list.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .nav-list.responsive li > *{
+    flex-grow: 1;
+  }
+  .nav-brand-name {
+    display: none;
+  }
+}
+
+.navbar {
+  background-color: var(--primary);
   font-family: 'Ubuntu', sans-serif;
 }
+
+.nav-link {
+  margin-left: 20px;
+  font-size: 1.5rem;
+}
+/* .navbar .nav-list .nav-item:not(:first-child) {
+  display: none;
+}
+.navbar .nav-list .nav-item {
+  position: relative;
+
+}
+
 .nav-list {
   height: 100%;
   list-style-type: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 .nav-item {
@@ -275,6 +365,16 @@ body {
   background-color: var(--accent);
   position: relative;
   border-radius: 4px;
+}
+
+.nav-item-brand {
+  height: 60px;
+  width: 60px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  float: left;
+  color: var(--primary-light);
 }
 
 .nav-item:hover {
@@ -319,8 +419,6 @@ body {
 
 .nav-item>.nav-btn:focus {
   background-color: var(--accent-hover);
-  /* outline: -webkit-focus-ring-color auto 1px; */
-  /* box-shadow: 0 0 0px 2px var(--accent-active); */
   box-shadow: 0 0 0px 2px var(--accent-focus);
   
 }
@@ -342,7 +440,7 @@ body {
   text-align: center;
   transition: 0.5s;
   border-radius: 4px;
-}
+} */
 
 /* Lesson Selection Page */
 .lesson-selecter {
@@ -456,19 +554,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .filter-controls>* {
-  margin: 0 10px;
+  margin: 5px 10px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
   .filter-controls {
-    flex-direction: column;
+    flex-direction: row;
   }
-
+  
   .filter-controls>* {
-    margin: 5px 10px;
+    margin: 0 10px;
   }
 }
 
@@ -478,9 +577,9 @@ body {
 
 .ascending-toggle input[type="checkbox"] {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: translate(10px, 5px);
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 10px;
 }
 
 .text-bold {
@@ -647,4 +746,26 @@ body {
     transform: translate(0);
     opacity: 1;
   }
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+ 
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
 }
