@@ -6,19 +6,19 @@ export const FilterControls = ({onSetFilter, onSetAscending, ascending}) => {
       <p>Filters:</p>
       <button
         onClick={() => onSetFilter("alphabetical")}
-        className="btn btn-primary text-bold"
+        className="btn btn-accent-outline text-bold"
       >
         Alphabetical
       </button>
       <button
         onClick={() => onSetFilter("raiting")}
-        className="btn btn-primary text-bold"
+        className="btn btn-accent-outline text-bold"
       >
         Raiting
       </button>
       <button
         onClick={() => onSetFilter("release")}
-        className="btn btn-primary text-bold"
+        className="btn btn-accent-outline text-bold"
       >
         Release Date
       </button>
