@@ -25,3 +25,11 @@ Create reusable functions for displaying the poster and movie details. Add css t
 >
 Goal of this exercise is to build a fully functioning Tik Tak Toe game
 >
+
+#### Lesson 3:
+##### Start here: [kcheema/react-redux-exercise](https://github.com/kcheema/react-redux-exercise)
+
+1. Clone the repo
+2. Add Redux store, reducers, actions
+3. Connect Redux to the app
+4. Bonus: Modify the code to use Hooks instead of class components
