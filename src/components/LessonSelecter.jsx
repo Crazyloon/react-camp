@@ -10,6 +10,7 @@ export const LessonSelecter = ({onSetLesson}) => {
       </div>
       <button onClick={() => onSetLesson(1)} className="btn btn-primary btn-lg">Lesson 1</button>
       <button onClick={() => onSetLesson(2)} className="btn btn-primary btn-lg">Lesson 2</button>
+      <button onClick={() => onSetLesson(3)} className="btn btn-primary btn-lg">Lesson 3</button>
     </main>
   )
 }

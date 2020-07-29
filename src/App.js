@@ -4,15 +4,18 @@ import { Gallery } from "./components/Gallery";
 import { Navigation } from "./components/Navigation";
 import { LessonSelecter } from "./components/LessonSelecter";
 import { TikTakToe } from "./components/TikTakToe";
+import { TodoPage } from "./components/TodoPage";
 
 const App = () => {
   const [lesson, setLesson] = useState(0);
   const renderCurrentLessonComponent = () => {
     switch (lesson){
       case 1: 
-        return <Gallery onSetLesson={setLesson} />
+        return <Gallery />
       case 2:
-        return <TikTakToe onSetLesson={setLesson} />
+        return <TikTakToe />
+      case 3:
+        return <TodoPage />
 
       
       default:
